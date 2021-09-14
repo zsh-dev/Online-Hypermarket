@@ -135,7 +135,6 @@
 
     &__contacts {
         display: flex;
-
         &_media {
             display: none;
 
@@ -233,7 +232,7 @@
         visibility: hidden;
         opacity: 0;
         transition: .5s;
-
+        z-index: 9;
         &.active {
             visibility: visible;
             opacity: 1;
@@ -257,4 +256,9 @@
 .contacts-icon {
     width: 25px;
     height: 25px;
+    fill: $blue;
+    transition: fill .5s;
+    &:hover {
+        fill: $red;
+    }
 }

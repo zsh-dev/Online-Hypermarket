@@ -20,6 +20,18 @@
         }
     }
 
+    .promo {
+        &__title {
+            font-size: 38px;
+            line-height: 42px;
+        }
+
+        &__text {
+            font-size: 20px;
+            line-height: 25px;
+        }
+    }
+
 }
 
 @media(max-width: 991px) {
@@ -37,6 +49,7 @@
                 display: none;
             }
         }
+
         &__menu-item_more {
             display: block;
         }
@@ -58,11 +71,28 @@
         &__form {
             max-width: 50%;
         }
+
         &__categories-list {
             min-width: 585px;
             height: 410px;
         }
 
+    }
+
+    .promo {
+        &__descr {
+            margin-right: 0;
+        }
+        &__title {
+            font-size: 35px;
+            line-height: 40px;
+        }
+
+        &__text {
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -70,6 +100,23 @@
     .header {
         &__form {
             margin: 0 15px;
+        }
+    }
+    .promo {
+        &__slide {
+            padding: 28px 15px 52px;
+            flex-direction: column;
+        }
+        &__descr {
+            margin-top: 22px;
+            order: 1;
+        }
+        &__title {
+            font-size: 30px;
+            line-height: 35px;
+        }
+        &__slider-btn {
+            display: none;
         }
     }
 }
@@ -90,7 +137,7 @@
             &.active {
                 right: 0;
             }
-           
+
         }
 
         &__nav-container {
@@ -101,13 +148,15 @@
             align-items: stretch;
             padding: 0;
         }
+
         .burger {
             display: block;
         }
+
         .burger-wrap {
             display: block;
             align-self: flex-end;
-            padding:18px 15px;
+            padding: 18px 15px;
         }
 
         &__city {
@@ -169,9 +218,9 @@
         }
 
         &__btn-search_link {
-           display: block;
-           margin-left: auto;
-           margin-right: 5px;
+            display: block;
+            margin-left: auto;
+            margin-right: 5px;
         }
 
         &__cart {
@@ -182,6 +231,7 @@
             height: 23px;
             margin-right: auto;
         }
+
         &__categories-list {
             flex-wrap: nowrap;
             min-width: auto;
@@ -190,6 +240,7 @@
         }
     }
 }
+
 @media(max-width: 375px) {
     .logo {
         width: 175px;

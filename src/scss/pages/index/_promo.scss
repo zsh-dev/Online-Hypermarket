@@ -1,0 +1,88 @@
+.promo {
+    padding: 15px 0 70px;
+
+    &__slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(33.06% 190.55% at 66.94% 44.11%, #7FB1ED 0%, #437FC8 34.66%, rgba(28, 80, 143, 0.95) 72.16%, #1C4E8A 87.8%, #1A467C 100%);
+        border-radius: 10px;
+        padding: 55px 60px 34px;
+    }
+
+    &__descr {
+        max-width: 600px;
+        margin-right: 50px;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 45px;
+        line-height: 50px;
+        color: #FFFFFF;
+        margin-bottom: 10px;
+
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 30px;
+        color: #FFFFFF;
+        margin-bottom: 30px;
+    }
+
+    &__link {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        padding: 5px 39px;
+        background-color: #FFFFFF;
+        border-radius: 30px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 35px;
+        color: rgba(28, 80, 143, 0.95);
+    }
+
+    &__slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+
+        &_prev {
+            left: 13px;
+            background: url(../img/icons/arrow-prev.svg) center center no-repeat;
+            z-index: 1;
+        }
+
+        &_next {
+            right: 13px;
+            background: url(../img/icons/arrow-next.svg) center center no-repeat;
+            z-index: 1;
+        }
+    }
+
+    &__bullets {
+        position: absolute;
+        bottom: 24px;
+        text-align: center;
+        z-index: 1;
+
+        span {
+            width: 10px;
+            height: 10px;
+            border: 1px solid #FFFFFF;
+            background-color: transparent;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: #fff;
+        }
+    }
+}

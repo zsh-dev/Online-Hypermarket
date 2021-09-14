@@ -2,12 +2,16 @@
 @import 'base/variables';
 @import 'libs/minireset.min';
 @import 'fonts';
+@import 'libs/swiper-bundle.min';
 @import 'components';
 @import 'global';
 
 
 
 @import 'pages/header';
+
+
+@import 'pages/index/promo';
 
 
 

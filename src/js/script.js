@@ -1,3 +1,20 @@
+const swiper = new Swiper('.promo__slider', {
+  loop: true,
+  spaceBetween: 30,
+  speed: 400,
+  autoplay: true,
+
+
+  pagination: {
+    el: '.promo__bullets',
+    clickable: true
+  },
+  navigation: {
+    nextEl: '.promo__slider-btn_next',
+    prevEl: '.promo__slider-btn_prev',
+  },
+});
+
 const linkMore = document.querySelector('.header__menu-link_more'),
     listMore = document.querySelector('.header__mobile-list');
 
