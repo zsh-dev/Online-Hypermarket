@@ -1,0 +1,41 @@
+.btn {
+    height: 40px;
+    padding-left: 30px;
+    padding-right: 25px;
+    
+    background-color: $blue;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.burger {
+    display: none;
+    width: 22px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    &-wrap {
+        display: none;
+    }
+    span {
+        display: block;
+        height: 2px;
+        background-color: $red;
+        &:not(:last-child) {
+            margin-bottom: 7px;
+        }
+    }
+    &_close {
+        width: 30px;
+        span {
+            &:first-child {
+                transform: rotate(45deg) translate(2px, 5px);
+            }
+            &:last-child {
+                transform: rotate(-45deg) translate(2px, -4px);
+            }
+        }
+    }
+}
