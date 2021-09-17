@@ -55,7 +55,7 @@ burgerClose.addEventListener('click', () => {
     document.body.classList.remove('lock');
 })
 
-window.addEventListener('resize', () => {
+function accordeonTrigger(params) {
   if (window.innerWidth < 640) {
     const linksBtns = document.querySelectorAll('.links__list-title');
     linksBtns.forEach((item) => {
@@ -65,5 +65,11 @@ window.addEventListener('resize', () => {
     })
    
   }
+}
+
+accordeonTrigger();
+
+window.addEventListener('resize', () => {
+  accordeonTrigger();
 })
 
