@@ -32,6 +32,13 @@
         }
     }
 
+    .products {
+        &__cards {
+             grid-template-columns: repeat(3, 1fr);
+        }
+       
+    }
+
 }
 
 @media(max-width: 991px) {
@@ -117,6 +124,15 @@
         }
         &__slider-btn {
             display: none;
+        }
+    }
+    .products {
+        &__cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        &__card {
+            flex-shrink: 0;
+            flex-basis: 250px;
         }
     }
 }
@@ -237,6 +253,15 @@
             min-width: auto;
             height: 220px;
             overflow-y: auto;
+        }
+    }
+    .products {
+        &__cards {
+            display: flex;
+            min-width: 250%;
+        }
+        &__inner {
+            overflow-x: scroll;
         }
     }
 }

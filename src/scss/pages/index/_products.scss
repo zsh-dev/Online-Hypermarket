@@ -1,0 +1,13 @@
+.products {
+    padding-bottom: 50px;
+    &__title {
+        padding-bottom: 8px;
+        border-bottom: 1px solid #E5E5E5;
+        margin-bottom: 27px;
+    }
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+}
