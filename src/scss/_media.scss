@@ -34,9 +34,9 @@
 
     .products {
         &__cards {
-             grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
-       
+
     }
 
 }
@@ -90,6 +90,7 @@
         &__descr {
             margin-right: 0;
         }
+
         &__title {
             font-size: 35px;
             line-height: 40px;
@@ -101,6 +102,12 @@
             margin-bottom: 20px;
         }
     }
+
+    .products {
+        &__cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 }
 
 @media(max-width: 767px) {
@@ -109,30 +116,38 @@
             margin: 0 15px;
         }
     }
+
     .promo {
         &__slide {
             padding: 28px 15px 52px;
             flex-direction: column;
         }
+
         &__descr {
             margin-top: 22px;
             order: 1;
         }
+
         &__title {
             font-size: 30px;
             line-height: 35px;
         }
+
         &__slider-btn {
             display: none;
         }
     }
+
     .products {
-        &__cards {
-            grid-template-columns: repeat(2, 1fr);
-        }
+
+
         &__card {
             flex-shrink: 0;
             flex-basis: 250px;
+
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
         }
     }
 }
@@ -255,14 +270,20 @@
             overflow-y: auto;
         }
     }
+
     .products {
         &__cards {
             display: flex;
-            min-width: 250%;
+            min-width: 170%;
+            gap: 0;
         }
+
         &__inner {
             overflow-x: scroll;
         }
+    }
+    .card__label_discount {
+        top: 56%;
     }
 }
 
@@ -271,11 +292,13 @@
         width: 175px;
         height: 35px;
     }
+
     .promo {
         &__title {
             font-size: 24px;
             line-height: 35px;
         }
+
         &__text {
             font-size: 16px;
             line-height: 22px;
