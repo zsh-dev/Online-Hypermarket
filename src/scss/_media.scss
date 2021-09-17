@@ -21,6 +21,7 @@
     }
 
     .promo {
+        padding-bottom: 50px;
         &__title {
             font-size: 38px;
             line-height: 42px;
@@ -33,10 +34,31 @@
     }
 
     .products {
+        padding-bottom: 70px;
         &__cards {
             grid-template-columns: repeat(3, 1fr);
         }
+        &__banner {
+            margin: 45px 0;
+        }
 
+    }
+
+    .banner {
+        &__title {
+            font-size: 50px;
+            line-height: 60px;
+        }
+
+        &__text {
+            font-size: 25px;
+            line-height: 30px;
+        }
+    }
+    .links {
+        &__item {
+            flex-basis: 33.333%;
+        }
     }
 
 }
@@ -87,6 +109,7 @@
     }
 
     .promo {
+        padding-bottom: 30px;
         &__descr {
             margin-right: 0;
         }
@@ -104,8 +127,29 @@
     }
 
     .products {
+        padding-bottom: 50px;
         &__cards {
             grid-template-columns: repeat(2, 1fr);
+        }
+        &__banner {
+            margin: 35px 0;
+        }
+    }
+
+    .banner {
+        &__title {
+            font-size: 40px;
+            line-height: 50px;
+        }
+
+        &__text {
+            font-size: 20px;
+            line-height: 25px;
+        }
+    }
+    .links {
+        &__item {
+            flex-basis: 50%;
         }
     }
 }
@@ -148,6 +192,13 @@
             &:not(:last-child) {
                 margin-right: 20px;
             }
+        }
+    }
+
+    .banner {
+        &__title {
+            font-size: 35px;
+            line-height: 40px;
         }
     }
 }
@@ -282,8 +333,44 @@
             overflow-x: scroll;
         }
     }
+
     .card__label_discount {
         top: 56%;
+    }
+
+    .banner {
+        &__inner {
+            padding: 30px 26px;
+            flex-direction: column;
+        }
+
+        &__descr {
+            max-width: none;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+
+        &__title {
+            margin-bottom: 10px;
+        }
+    }
+    .links {
+        &__wrap {
+            max-height: 0;
+            overflow: hidden;
+            transition:.2s ease-out ;
+            &.active {
+                max-height: none;
+            }
+        }
+        &__item {
+            flex-basis: 100%;
+            margin-bottom: 13px;
+        }
+        &__list-title {
+            transition: .5s;
+            background: url(../img/icons/arrow-down.svg) center right no-repeat;
+        }
     }
 }
 
@@ -302,6 +389,13 @@
         &__text {
             font-size: 16px;
             line-height: 22px;
+        }
+    }
+
+    .banner {
+        &__text {
+            font-size: 18px;
+            line-height: 24px;
         }
     }
 }

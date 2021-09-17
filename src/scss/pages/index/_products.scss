@@ -1,8 +1,7 @@
 .products {
-    padding-bottom: 50px;
+    padding-bottom: 100px;
     &__title {
-        padding-bottom: 8px;
-        border-bottom: 1px solid #E5E5E5;
+       
         margin-bottom: 27px;
     }
     &__cards {
@@ -10,4 +9,39 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
     }
+    &__banner {
+        margin: 65px 0;
+    }
+}
+.banner {
+    &__inner {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 26px;
+
+        background-color: #142840;
+        border-radius: 5px;
+    }
+
+    &__descr {
+        max-width: 600px;
+        margin-right: 50px;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 60px;
+        line-height: 65px;
+        color: #FFFFFF;
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        font-size: 30px;
+        line-height: 35px;
+        color: #FFFFFF;
+    }
+
 }

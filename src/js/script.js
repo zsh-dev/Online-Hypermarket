@@ -54,3 +54,16 @@ burgerClose.addEventListener('click', () => {
     menu.classList.remove('active');
     document.body.classList.remove('lock');
 })
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth < 640) {
+    const linksBtns = document.querySelectorAll('.links__list-title');
+    linksBtns.forEach((item) => {
+      item.addEventListener('click', ()=> {
+        item.nextSibling.classList.toggle('active');
+    })
+    })
+   
+  }
+})
+
