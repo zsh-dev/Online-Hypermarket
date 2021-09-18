@@ -30,36 +30,16 @@
 .burger {
     display: none;
     width: 22px;
+    height: 22px;
     background-color: transparent;
     border: none;
     padding: 0;
-
+    background: url(../img/icons/mobile-burger.svg) center center / cover no-repeat;
     &-wrap {
         display: none;
     }
-
-    span {
-        display: block;
-        height: 2px;
-        background-color: $red;
-
-        &:not(:last-child) {
-            margin-bottom: 7px;
-        }
-    }
-
     &_close {
-        width: 30px;
-
-        span {
-            &:first-child {
-                transform: rotate(45deg) translate(2px, 5px);
-            }
-
-            &:last-child {
-                transform: rotate(-45deg) translate(2px, -4px);
-            }
-        }
+        background-image: url(../img/icons/close.svg);
     }
 }
 
