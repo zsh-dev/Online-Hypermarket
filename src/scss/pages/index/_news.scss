@@ -1,0 +1,15 @@
+.news {
+    padding-bottom: 85px;
+
+    &__title {
+        margin-bottom: 30px;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 248px 248px;
+        grid-auto-rows: minmax(248px, auto);
+        gap: 20px;
+    }
+}
