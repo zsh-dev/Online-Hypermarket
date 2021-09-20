@@ -1,0 +1,32 @@
+.text {
+    padding-bottom: 53px;
+
+    &__title {
+        margin-bottom: 33px;
+    }
+
+    &__content {
+        font-size: 16px;
+        line-height: 25px;
+
+        span {
+            display: block;
+            color: #000;
+            font-weight: 500;
+        }
+    }
+    &__btn-wrap {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    &__btn-more {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: $blue;
+        background-color: transparent;
+        border: none;
+    }
+}

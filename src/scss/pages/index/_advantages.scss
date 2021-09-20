@@ -1,0 +1,55 @@
+.advantages {
+    padding-bottom: 60px;
+    &__list {
+        max-width: 1085px;
+        margin: 0 auto;
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        flex-basis: 20%;
+        text-align: center;
+    }
+
+    &__img {
+        background: center center / cover no-repeat;
+        margin: 0 auto 8px;
+        &_first {
+            width: 50px;
+            height: 50px;
+            background-image: url(../img/icons/adv-1.svg);
+        }
+
+        &_second {
+            width: 46px;
+            height: 51px;
+            background-image: url(../img/icons/adv-2.svg);
+        }
+
+        &_third {
+            width: 46px;
+            height: 46px;
+            background-image: url(../img/icons/adv-3.svg);
+        }
+
+        &_fourth {
+            width: 43px;
+            height: 43px;
+            background-image: url(../img/icons/adv-4.svg);
+        }
+
+        &_fifth {
+            width: 50px;
+            height: 51px;
+            background-image: url(../img/icons/adv-5.svg);
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+    }
+}

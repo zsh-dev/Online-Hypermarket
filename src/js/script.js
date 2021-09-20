@@ -85,3 +85,10 @@ function accordeonTrigger(params) {
 }
 
 accordeonTrigger();
+
+const btnMore = document.querySelector('.text__btn-more'),
+      sectionText = document.querySelector('.text');
+
+      btnMore.addEventListener('click', () => {
+        sectionText.classList.add('open')
+      })
