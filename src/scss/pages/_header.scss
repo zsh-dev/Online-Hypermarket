@@ -87,6 +87,62 @@
         margin-bottom: 13px;
     }
 
+    &__categories {
+        position: relative;
+        &.active {
+            .header__btn {
+                background-color: transparent;
+                color: $blue;
+                background-image: url(../img/icons/close-blue.svg);
+            }
+            .header__categories-list {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__btn {
+        padding-left: 56px;
+        padding-right: 16px;
+        height: 46px;
+        font-weight: 600;
+        background: url(../img/icons/burger.svg) center left 23px no-repeat;
+        background-color: $blue;
+        will-change: background-image;
+        transition: background-color .5s,background-image .5s, color .5s;
+    }
+
+    &__categories-list {
+        display: flex;
+        flex-flow: column wrap;
+        min-width: 865px;
+        height: 290px;
+        position: absolute;
+        padding: 18px 0;
+        top: 50px;
+        left: 0;
+        background-color: #FFFFFF;
+        box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        visibility: hidden;
+        opacity: 0;
+        transition: .5s;
+        z-index: 9;
+    }
+
+    &__categories-link {
+        width: 100%;
+        font-size: 14px;
+        line-height: 25px;
+        padding: 7px 28px 9px;
+        transition: background-color .5s;
+
+        &:hover {
+            background-color: #DCE9F8;
+        }
+    }
+
 
 
     &__form {
@@ -195,57 +251,6 @@
         .sum {
             font-weight: 500;
             margin-top: 5px;
-        }
-    }
-
-}
-
-.header {
-    &__categories {
-        position: relative;
-    }
-
-    &__btn {
-        padding-left: 56px;
-        padding-right: 16px;
-        height: 46px;
-        font-weight: 600;
-        background: url(../img/icons/burger.svg) center left 23px no-repeat;
-        background-color: $blue;
-
-    }
-
-    &__categories-list {
-        display: flex;
-        flex-flow: column wrap;
-        min-width: 865px;
-        height: 290px;
-        position: absolute;
-        padding: 18px 0;
-        top: 50px;
-        left: 0;
-        background-color: #FFFFFF;
-        box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        visibility: hidden;
-        opacity: 0;
-        transition: .5s;
-        z-index: 9;
-        &.active {
-            visibility: visible;
-            opacity: 1;
-        }
-    }
-
-    &__categories-link {
-        width: 100%;
-        font-size: 14px;
-        line-height: 25px;
-        padding: 7px 28px 9px;
-        transition: background-color .5s;
-
-        &:hover {
-            background-color: #DCE9F8;
         }
     }
 
