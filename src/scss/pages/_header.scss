@@ -1,6 +1,6 @@
 .header {
-    padding: 10px 0 15px;
-
+    padding: 10px 0 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
     &__nav {
         padding-bottom: 15px;
         border-bottom: 1px solid #E5E5E5;
@@ -203,15 +203,13 @@
 .header {
     &__categories {
         position: relative;
-        background-color: $blue;
-        border-radius: 5px;
     }
 
     &__btn {
         padding-left: 56px;
         padding-right: 16px;
         height: 46px;
-        font-weight: 500;
+        font-weight: 600;
         background: url(../img/icons/burger.svg) center left 23px no-repeat;
         background-color: $blue;
 
