@@ -1,12 +1,30 @@
 .breadcrumbs {
+    margin-top: 20px;
 
     &__list {
         display: flex;
     }
 
     &__item {
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+        &:last-child {
+            a {
+                font-weight: 500;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            
+        }
     }
 
     &__link {
+        font-size: 14px;
+        line-height: 18px;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

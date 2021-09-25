@@ -1,0 +1,460 @@
+.catalog {
+    padding: 15px 0 60px;
+
+    &__title {
+        border-bottom: none;
+        margin-bottom: 15px;
+    }
+
+    &__btns-filter {
+        display: flex;
+        margin-bottom: 33px;
+    }
+
+    &__btn-filter {
+        padding: 5px 25px;
+        height: 40px;
+        background-color: #EFF3F9;
+        border-radius: 30px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 16px;
+        color: #404040;
+        border: none;
+        transition: background-color .5s, background-color .5s;
+        cursor: pointer;
+
+        &.active {
+            background-color: $blue;
+            color: #fff;
+
+            &:hover {
+                background-color: $blue;
+            }
+        }
+
+        &:hover {
+            background-color: #55BB9F;
+            color: #fff;
+        }
+
+        &:not(:last-child) {
+            margin-right: 18px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+    }
+
+    &__filter {
+        flex-shrink: 0;
+
+        margin-right: 40px;
+    }
+
+    &__products-wrapper {
+        flex-grow: 1;
+    }
+
+    &__sort {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 28px;
+    }
+
+    &__sort-item {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        padding: 0 18px 0 21px;
+        background-color: #7FB1ED;
+        border-radius: 30px;
+        font-weight: 500;
+        color: #FFFFFF;
+
+        button {
+            width: 12px;
+            height: 12px;
+            background: url(../img/icons/close-white.svg) center center / cover no-repeat;
+            background-color: transparent;
+            border: none;
+            margin-left: 6px;
+            cursor: pointer;
+        }
+
+    }
+
+    &__sort-actions {
+        display: flex;
+        align-items: center;
+    }
+
+    .form-select {
+        margin-right: 40px;
+    }
+
+    &__select {
+        border: none;
+        background-color: transparent;
+
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #404040;
+    }
+
+    &__quantity {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #404040;
+        margin-right: 40px;
+
+        span {
+            font-weight: 600;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+    }
+
+    &__btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+            svg {
+                fill: #404040;
+            }
+        }
+
+        svg {
+            fill: #999;
+            transition: fill .5s;
+        }
+
+        &_list {
+            svg {
+                width: 22px;
+                height: 17px;
+            }
+
+        }
+
+        &_grid {
+            svg {
+                width: 18px;
+                height: 18px;
+            }
+
+        }
+
+        &.active {
+            svg {
+                fill: #404040;
+            }
+        }
+    }
+
+
+    &__products {
+        margin-bottom: 15px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 50px 45px;
+    }
+}
+
+.filter {
+    width: 335px;
+
+    &__form {}
+
+    &__wrap {
+        margin-bottom: 20px;
+
+        &.active {
+            .filter__content {
+                margin-top: 15px;
+                overflow: visible;
+                opacity: 1;
+
+                &_mt {
+                    margin-top: 30px;
+                }
+            }
+
+            .filter__title::after {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    &__title {
+        position: relative;
+        width: 100%;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        text-align: left;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            background-image: url(../img/icons/arrow-down-gray.svg);
+            width: 13px;
+            height: 8px;
+            transition: transform .5s;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: all .3s ease-out;
+        will-change: max-height;
+
+    }
+
+    &__check {
+        &:not(:last-child) {
+            margin-bottom: 13px;
+        }
+    }
+
+
+
+    &__link {
+        align-self: center;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 55px;
+        margin-top: 15px;
+        height: 30px;
+        border: 1px solid #CECECE;
+        border-radius: 3px;
+        font-size: 13px;
+        line-height: 16px;
+        color: #404040;
+        transition: background-color .5s, color .5s;
+
+        &:hover {
+            background-color: $blue;
+            color: #fff;
+        }
+    }
+
+
+
+    &__range {
+        flex-shrink: 0;
+        margin-bottom: 18px;
+    }
+
+    &__inputs {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__inputs-wrap {
+        display: inline-flex;
+        align-items: center;
+        color: #6E6E6E;
+
+        &:first-child {
+            margin-right: 20px;
+        }
+    }
+
+    &__range-input {
+        width: 98px;
+        height: 35px;
+        padding: 0 5px;
+        border: 1px solid #D4D4D4;
+        border-radius: 5px;
+        margin-left: 7px;
+        color: #6E6E6E;
+        text-align: center;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input[type='number'] {
+        -moz-appearance: textfield;
+    }
+
+    &__info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #E5E5E5;
+        border-radius: 5px;
+        min-height: 63px;
+    }
+
+    &__info-text {
+        flex-grow: 1;
+        text-align: center;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 35px;
+        color: #404040;
+        padding: 5px;
+    }
+
+    &__reset {
+        align-self: stretch;
+        margin-left: auto;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        width: 67px;
+        border-left: 1px solid #999999;
+        border-radius: 0 5px 5px 0;
+        transition: background-color .5s;
+
+        &:hover {
+            background-color: #c7c5c5;
+
+            svg {
+                fill: $red;
+            }
+        }
+
+        svg {
+            width: 15px;
+            height: 22px;
+            fill: #696969;
+            transition: fill .5s;
+        }
+    }
+}
+
+.check {
+    position: relative;
+    padding-left: 22px;
+    cursor: pointer;
+
+    &__input {
+        position: absolute;
+        appearance: none;
+        width: 1px;
+        height: 1px;
+
+        &:checked~.check__box {
+            background-color: $red;
+            border: none;
+        }
+    }
+
+    &__box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #999999;
+        border-radius: 3px;
+        background: url(../img/icons/ok.svg) center center no-repeat;
+    }
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 23px;
+    height: 23px;
+    background-color: #FFFFFF;
+    border: 3px solid #7FB1ED;
+    border-radius: 50%;
+    top: -10px;
+
+    &::after,
+    &::before {
+        display: none;
+    }
+}
+
+.noUi-target {
+    width: 100%;
+    height: 3px;
+    border: none;
+}
+
+.noUi-connect {
+    background-color: $blue;
+}
+
+.noUi-horizontal .noUi-handle-lower {
+    right: -22px;
+}
+
+.noUi-horizontal .noUi-handle-upper {
+    right: -3px;
+}
+
+.pagination {
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 13px;
+        }
+    }
+
+    &__link {
+        font-size: 16px;
+        line-height: 24px;
+        transition: color .5s;
+
+        &.active {
+            font-weight: 600;
+        }
+        &:not(.not-clickable):hover {
+            color: $blue;
+            svg {
+                fill: $blue;
+            }
+        }
+
+        svg {
+            width: 7px;
+            height: 8px;
+            fill: #404040;
+            transition: fill .5s;
+        }
+
+        &.not-clickable {
+            svg {
+                fill: #999999;
+            }
+        }
+    }
+}
