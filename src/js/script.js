@@ -82,13 +82,13 @@ function accordeonTrigger(selectors) {
   const items = document.querySelectorAll(selectors);
   items.forEach((item) => {
     const itemParent = item.parentNode,
-        itemSibling = item.nextSibling;
-        
-        if (itemParent.classList.contains('active')) {
-          itemSibling.style.maxHeight = itemSibling.scrollHeight + 'px';
-        }
+      itemSibling = item.nextSibling;
+
+    if (itemParent.classList.contains('active')) {
+      itemSibling.style.maxHeight = itemSibling.scrollHeight + 'px';
+    }
     item.addEventListener('click', () => {
-      
+
       itemParent.classList.toggle('active');
       if (itemParent.classList.contains('active')) {
         itemSibling.style.maxHeight = itemSibling.scrollHeight + 'px';
@@ -151,6 +151,19 @@ if (inputs) {
 
   });
 }
+
+const filterCloseBtn = document.querySelector('.filter__close'),
+  filterOpenBtn = document.querySelector('.catalog__btn-open');;
+
+filterOpenBtn.addEventListener('click', () => {
+  document.querySelector('.filter').classList.add('active');
+  document.body.classList.add('lock')
+})
+
+filterCloseBtn.addEventListener('click', () => {
+  document.querySelector('.filter').classList.remove('active');
+  document.body.classList.remove('lock')
+})
 
 
 const burger = document.querySelector('.burger[data-burger]'),

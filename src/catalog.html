@@ -13,15 +13,21 @@
 <section class="catalog">
     <div class="container">
         <h2 class="title catalog__title">Холодильники</h2>
-        <div class="catalog__btns-filter">
-            <button class="catalog__btn-filter">Инверторные</button>
-            <button class="catalog__btn-filter">Инверторные с дисплеем</button>
-            <button class="catalog__btn-filter">Недорогие</button>
-            <button class="catalog__btn-filter">Ширина 50 см</button>
-            <button class="catalog__btn-filter">Ещё</button>
+        <div class="catalog__btns-wrapper">
+            <div class="catalog__btns-filter">
+                <button class="catalog__btn-filter">Инверторные</button>
+                <button class="catalog__btn-filter">Инверторные с дисплеем</button>
+                <button class="catalog__btn-filter">Недорогие</button>
+                <button class="catalog__btn-filter">Ширина 50 см</button>
+                <button class="catalog__btn-filter">Ещё</button>
+            </div>
         </div>
         <div class="catalog__inner">
             <div class="filter catalog__filter">
+                <div class="filter__header">
+                    <p class="filter__name">Фильтр</p>
+                    <button class="filter__close"></button>
+                </div>
                 <form action="#" class="filter__form">
                     <div class="filter__wrap active">
                         <button type="button" class="filter__title">Производитель <span>(245)</span></button>
@@ -55,7 +61,7 @@
                         <button type="button" class="filter__title">Цена</button>
                         <div class="filter__content filter__content_mt">
                             <div class="filter__range"></div>
-                     
+
                             <div class="filter__inputs">
                                 <div class="filter__inputs-wrap">
                                     <span>от</span>
@@ -63,7 +69,8 @@
                                 </div>
                                 <div class="filter__inputs-wrap">
                                     <span>до</span>
-                                    <input type="number" class="filter__range-input" placeholder="150 000" id="rangeMax">
+                                    <input type="number" class="filter__range-input" placeholder="150 000"
+                                        id="rangeMax">
                                 </div>
                             </div>
                         </div>
@@ -123,6 +130,7 @@
             </div>
             <div class="catalog__products-wrapper">
                 <div class="catalog__sort">
+
                     <div class="catalog__sort-item">Samsung
                         <button></button>
                     </div>
@@ -148,7 +156,9 @@
                                 </svg>
                             </button>
                         </div>
+                        <button class="catalog__btn-open">Фильтр <span>1</span></button>
                     </div>
+                    
                 </div>
                 <div class="catalog__products">
                     <article class="card card-list card_new card_gift card_discount">
@@ -283,10 +293,10 @@
                 <div class="pagination">
                     <ul class="pagination__list">
                         <li class="pagination__item"><a class="pagination__link not-clickable">
-                            <svg>
-                            <use xlink:href='img/sprite.svg#pag-arrow-prev'></use>
-                            </svg>
-                        </a></li>
+                                <svg>
+                                    <use xlink:href='img/sprite.svg#pag-arrow-prev'></use>
+                                </svg>
+                            </a></li>
                         <li class="pagination__item"><a class="pagination__link active not-clickable">1</a></li>
                         <li class="pagination__item"><a href="#" class="pagination__link">2</a></li>
                         <li class="pagination__item"><a href="#" class="pagination__link">3</a></li>
@@ -294,10 +304,10 @@
                         <li class="pagination__item"><a class="pagination__link not-clickable">...</a></li>
                         <li class="pagination__item"><a href="#" class="pagination__link">17</a></li>
                         <li class="pagination__item"><a href="#" class="pagination__link">
-                            <svg>
-                                <use xlink:href='img/sprite.svg#pag-arrow-next'></use>
+                                <svg>
+                                    <use xlink:href='img/sprite.svg#pag-arrow-next'></use>
                                 </svg>
-                        </a></li>
+                            </a></li>
                     </ul>
                 </div>
             </div>
