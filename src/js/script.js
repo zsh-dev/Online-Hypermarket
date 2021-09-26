@@ -153,17 +153,24 @@ if (inputs) {
 }
 
 const filterCloseBtn = document.querySelector('.filter__close'),
-  filterOpenBtn = document.querySelector('.catalog__btn-open');;
+  filterOpenBtn = document.querySelector('.catalog__btn-open');
 
-filterOpenBtn.addEventListener('click', () => {
-  document.querySelector('.filter').classList.add('active');
-  document.body.classList.add('lock')
-})
+if (filterOpenBtn) {
+  filterOpenBtn.addEventListener('click', () => {
+    document.querySelector('.filter').classList.add('active');
+    document.body.classList.add('lock')
+  })
+}
+if (filterCloseBtn) {
+  filterCloseBtn.addEventListener('click', () => {
+    document.querySelector('.filter').classList.remove('active');
+    document.body.classList.remove('lock')
+  })
+}
 
-filterCloseBtn.addEventListener('click', () => {
-  document.querySelector('.filter').classList.remove('active');
-  document.body.classList.remove('lock')
-})
+
+
+
 
 
 const burger = document.querySelector('.burger[data-burger]'),
