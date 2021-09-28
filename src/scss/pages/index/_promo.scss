@@ -8,15 +8,6 @@
         background: radial-gradient(33.06% 190.55% at 66.94% 44.11%, #7FB1ED 0%, #437FC8 34.66%, rgba(28, 80, 143, 0.95) 72.16%, #1C4E8A 87.8%, #1A467C 100%);
         border-radius: 10px;
         padding: 55px 60px 34px;
-        &:hover {
-            .promo__title, .promo__text {
-                color: #7fb1ed;
-            }
-            .promo__link {
-                background-color: #7fb1ed;
-                color: #fff;
-            }
-        }
     }
 
     &__descr {
@@ -82,7 +73,6 @@
 
     &__bullets {
         position: absolute;
-        bottom: 24px;
         text-align: center;
         z-index: 1;
 

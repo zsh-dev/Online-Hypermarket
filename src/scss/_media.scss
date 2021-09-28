@@ -1,3 +1,33 @@
+@media(max-width: 1365px) {
+    .product {
+        &__inner {
+            flex-wrap: wrap;
+        }
+
+        &__slider,
+        &__specifications {
+            flex-basis: 25%;
+        }
+
+        // &__slider-nav  {
+        //     width: 90px;
+        // }
+        &__specifications {
+            flex-grow: 1;
+        }
+
+        &__info {
+            flex-grow: 1;
+            flex-basis: 50%;
+            margin-top: 40px;
+        }
+
+        &__specifications-data {
+            width: auto;
+        }
+    }
+}
+
 @media(max-width: 1199px) {
     .header {
         padding-bottom: 0;
@@ -208,7 +238,7 @@
             margin-bottom: 15px;
         }
 
-        .card__label:not(:last-child) {
+        .label:not(:last-child) {
             margin-right: 15px;
         }
 
@@ -224,6 +254,19 @@
 
         .card__btns {
             flex-basis: auto;
+        }
+    }
+
+    .product {
+        &__header-wrap {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        &__check {
+            margin-top: 15px;
+            margin-right: 0;
+            order: 1;
         }
     }
 
@@ -382,6 +425,7 @@
     .filter {
 
         position: fixed;
+        top: auto;
         bottom: -150%;
         left: 0;
         z-index: 11;
@@ -402,6 +446,71 @@
 
         &__form {
             padding: 0 15px;
+        }
+    }
+
+    .product {
+        &__title {
+            flex-basis: 100%;
+            border-bottom: 1px solid #E5E5E5;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        &__header {
+            margin-bottom: 20px;
+        }
+
+        &__header-wrap {
+            order: 1;
+        }
+
+        .ok,
+        .dn {
+            display: none;
+        }
+
+        &__items {
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+            align-items: stretch;
+            flex-direction: column;
+            flex-basis: 50%;
+        }
+
+        &__labels,
+        &__feedback {
+            margin-right: 0;
+        }
+
+        &__feedback {
+            order: -1;
+            margin-bottom: 15px;
+        }
+
+        p.ok {
+            margin-left: 0;
+        }
+
+        &__slider-nav {
+            width: 90px;
+
+            .swiper-slide {
+                padding: 10px 15px;
+            }
+        }
+
+        &__slider-main {
+            width: 260px;
+        }
+
+        &__box {
+            max-width: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
     }
 
@@ -503,6 +612,32 @@
             flex-basis: 33.333%;
             margin-bottom: 20px;
         }
+    }
+
+    .product {
+        &__slider {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        &__specifications {
+            display: none;
+        }
+
+        &__slider-nav {
+            display: none;
+        }
+
+        &__slider-main {
+            width: auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        &__slider-bullets {
+            display: block;
+        }
+
     }
 
 
@@ -659,7 +794,7 @@
         }
     }
 
-    .card__label_discount {
+    .label_discount {
         top: 56%;
     }
 
@@ -801,6 +936,83 @@
         line-height: 14px;
     }
 
+    .product {
+        &__header-wrap {
+            flex-basis: 50%;
+        }
+
+        .check {
+            display: none;
+        }
+
+        &__code {
+            font-size: 15px;
+            text-align: right;
+        }
+
+        .swiper-slide {
+            height: 500px;
+            margin-bottom: 10px;
+        }
+
+        .compare-btn {
+            display: inline-block;
+        }
+
+        .btn {
+            padding-left: 20px;
+            padding-right: 15px;
+        }
+
+        &__box {
+            padding: 30px 5px;
+        }
+
+        &__link-buy {
+            font-size: 15px;
+        }
+        &__info-items {
+            &.active {
+                .product__info-wrap {
+                    margin-top: 7px;
+                    opacity: 1;
+                }
+
+                .product__info-btn::after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        &__info-btn {
+            width: 100%;
+            text-align: left;
+            position: relative;
+            transition: .5s;
+            user-select: none;
+            margin-bottom: 0;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 10px;
+                right: 0;
+                width: 12px;
+                height: 6px;
+                background-image: url(../img/icons/arrow-down.svg);
+                transition: transform .5s;
+            }
+        }
+
+        &__info-wrap {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all .3s ease-out;
+            will-change: max-height;
+        }
+    }
+
     .footer {
         &__blocks {
             grid-template-columns: 1fr;
@@ -872,6 +1084,7 @@
             flex-basis: 100%;
         }
     }
+
     .catalog {
         &__select {
             font-size: 14px;
@@ -884,12 +1097,15 @@
             width: 140px;
             height: 140px;
         }
+
         .card__labels {
             margin-left: -152px;
         }
+
         .card__title {
             font-size: 14px;
         }
+
         .card__price {
             font-size: 15px;
 
@@ -903,18 +1119,49 @@
         &__list {
             flex-wrap: wrap;
         }
+
         &__item {
             margin-top: 5px;
+
             &:last-child {
                 width: 1005px;
             }
         }
+    }
+
+    .product {
+        &__box {
+            padding-left: 13px;
+            padding-right: 13px;
         }
 
-        .footer {
-            .logo {
-                width: auto;
-                height: auto;
+        &__price {
+            font-size: 35px;
+
+            &_old {
+                font-size: 18px;
             }
         }
+
+        &__actions {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        &__link-buy {
+            order: 1;
+        }
+
+        &__btn {
+            margin-bottom: 15px;
+            width: 100%;
+        }
     }
+
+    .footer {
+        .logo {
+            width: auto;
+            height: auto;
+        }
+    }
+}

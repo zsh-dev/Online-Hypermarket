@@ -1,0 +1,344 @@
+.product {
+    padding: 25px 0 70px;
+
+    &__header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 29px;
+    }
+
+    &__title {
+        flex-grow: 1;
+        max-width: 900px;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    &__header-wrap {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &__check {
+        margin-right: 23px;
+    }
+
+    &__code {
+        font-size: 16px;
+        line-height: 18px;
+        color: #404040;
+
+    }
+
+    &__items {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #E5E5E5;
+        flex-basis: 100%;
+        padding-top: 15px;
+        margin-top: 15px;
+
+        p {
+            font-size: 16px;
+            line-height: 18px;
+            color: #404040;
+        }
+
+    }
+
+    &__labels {
+        margin-right: 55px;
+
+        .label_discount {
+            margin-right: 20px;
+            position: static;
+        }
+    }
+
+    &__feedback {
+        margin-right: 55px;
+    }
+
+    p.ok {
+        margin-left: 55px;
+        position: relative;
+        padding-left: 25px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url(../img/icons/ok-green.svg);
+            width: 16px;
+            height: 13px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+    }
+}
+
+.product {
+    &__slider {
+        display: flex;
+        margin-right: 20px;
+    }
+
+    &__slider-nav {
+        position: relative;
+        padding: 20px 0;
+        flex-shrink: 0;
+        width: 111px;
+        height: 475px;
+        margin-right: 15px;
+        overflow: hidden;
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 128px;
+            padding: 15px 38px;
+            box-sizing: border-box;
+
+            img {
+                max-height: 100%;
+            }
+        }
+
+        .swiper-slide-thumb-active {
+            border: 1px solid #999999;
+            border-radius: 5px;
+        }
+
+    }
+
+    &__slider-btn {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: transparent;
+        border: none;
+        width: 15px;
+        height: 6px;
+        z-index: 1;
+
+        &_prev {
+            top: 0;
+            background-image: url(../img/icons/slider-arrow-top.svg);
+        }
+
+        &_next {
+            bottom: 0;
+            background-image: url(../img/icons/slider-arrow-down.svg);
+        }
+    }
+
+    &__slider-main {
+        position: relative;
+        overflow: hidden;
+        width: 300px;
+        height: 475px;
+        
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                max-height: 100%;
+            }
+        }
+    }
+    &__slider-bullets {
+        display: none;
+        position: absolute;
+        text-align: center;
+        z-index: 1;
+        bottom: 0 !important;
+        span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid $red;
+            background-color: transparent;
+        }
+        .swiper-pagination-bullet-active {
+            background-color: $red;
+        }
+    }
+    
+}
+
+
+.product {
+
+    &__specifications {
+        a {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__specifications-data {
+        width: 440px;
+        margin-bottom: 15px;
+    }
+
+    &__specifications-wrap {
+        display: flex;
+        font-size: 14px;
+        line-height: 18px;
+
+        &:not(:last-child) {
+            margin-bottom: 13px;
+        }
+    }
+
+    &__specifications-name {
+        min-width: 225px;
+        color: #6E6E6E;
+    }
+
+    &__link {
+        font-weight: 500;
+        color: $blue;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+
+
+    &__text {
+        font-size: 16px;
+        line-height: 18px;
+
+        color: #404040;
+        margin-bottom: 30px;
+
+        span {
+            display: block;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+    }
+}
+
+.product {
+
+    &__info {}
+
+    &__box {
+        max-width: 450px;
+        padding: 40px 35px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    &__prices {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    &__price {
+        font-weight: 500;
+        font-size: 40px;
+        line-height: 45px;
+        color: #404040;
+
+        &_old {
+            font-size: 20px;
+            line-height: 25px;
+            color: #6E6E6E;
+            margin-left: 35px;
+            text-decoration: line-through;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link-buy {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 25px;
+        text-decoration-line: underline;
+        color: $blue;
+        margin-right: 10px;
+    }
+
+    &__info-items {
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__info-btn {
+        padding-left: 25px;
+        background-color: transparent;
+        border: none;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 25px;
+        color: #1A467C;
+        margin-bottom: 7px;
+        background: center left no-repeat;
+
+        &_guarantee {
+            background-image: url(../img/icons/guarantee.svg);
+        }
+
+        &_delivery {
+            background-image: url(../img/icons/delivery.svg);
+        }
+
+        &_trash {
+            background-position: top 2px left;
+            background-image: url(../img/icons/trash.svg);
+        }
+    }
+
+    &__info-wrap {}
+
+    &__info-text {
+        color: #404040;
+
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    &__info-links {
+        display: inline-flex;
+        flex-direction: column;
+
+        a {
+            margin-bottom: 5px;
+        }
+    }
+}
+.compare-btn {
+    display: none;
+    position: absolute;
+    top: 18px;
+    right: 0;
+    border: none;
+    padding: 0;
+    background: url(../img/icons/compare.svg) no-repeat;
+    width: 17px;
+    height: 24px;
+    z-index: 1;
+}

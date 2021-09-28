@@ -1,4 +1,4 @@
-const swiper = new Swiper('.promo__slider', {
+const promoSlider = new Swiper('.promo__slider', {
   loop: true,
   spaceBetween: 30,
   speed: 400,
@@ -14,6 +14,46 @@ const swiper = new Swiper('.promo__slider', {
     prevEl: '.promo__slider-btn_prev',
   },
 });
+
+const productSliderNav = document.querySelector('.product__slider-nav'),
+  productSliderMain = document.querySelector('.product__slider-main');
+
+const sliderProductNav = new Swiper(productSliderNav, {
+  direction: 'vertical',
+  slidesPerView: 'auto',
+  freeMode: true,
+
+  spaceBetween: 20,
+})
+
+const sliderProductMain = new Swiper(productSliderMain, {
+  slidesPerView: 1,
+  spaceBetween: 40,
+  centeredSlides: true,
+  speed: 600,
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      direction: 'horizontal',
+    },
+    768: {
+      direction: 'vertical',
+     
+    },
+
+  },
+  pagination: {
+    el: '.product__slider-bullets',
+    clickable: true
+  },
+  navigation: {
+    nextEl: '.product__slider-btn_next',
+    prevEl: '.product__slider-btn_prev',
+  },
+  thumbs: {
+    swiper: sliderProductNav
+  }
+})
 
 const linkMore = document.querySelector('.header__menu-link_more'),
   listMore = document.querySelector('.header__mobile-list');
@@ -101,6 +141,10 @@ function accordeonTrigger(selectors) {
 }
 
 accordeonTrigger('.filter__title');
+accordeonTrigger('.product__info-btn');
+if (window.innerWidth < 640) {
+  accordeonTrigger('.links__list-title');
+}
 
 
 
@@ -184,9 +228,7 @@ burger.addEventListener('click', () => {
 })
 
 
-menu.addEventListener('click', ({
-  target
-}) => {
+menu.addEventListener('click', ({target}) => {
   if (target == menu || target == burgerClose) {
     menu.classList.remove('active');
     document.body.classList.remove('lock');
@@ -195,9 +237,7 @@ menu.addEventListener('click', ({
 
 
 
-if (window.innerWidth < 640) {
-  accordeonTrigger('.links__list-title');
-}
+
 
 
 const btnMore = document.querySelector('.text__btn-more'),

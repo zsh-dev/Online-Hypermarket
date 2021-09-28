@@ -5,13 +5,14 @@
         border-bottom: none;
         margin-bottom: 15px;
     }
+
     &__btns-wrapper {
         margin-bottom: 33px;
     }
 
     &__btns-filter {
         display: flex;
-        
+
     }
 
     &__btn-filter {
@@ -176,6 +177,7 @@
         line-height: 35px;
         color: #404040;
         padding: 0;
+
         span {
             padding: 2px 6px;
             background-color: $red;
@@ -202,6 +204,7 @@
 
 .filter {
     width: 335px;
+
     &__header {
         display: none;
         justify-content: space-between;
@@ -210,9 +213,11 @@
         margin-bottom: 13px;
         border-bottom: 1px solid #E5E5E5;
     }
+
     &__name {
         color: #595959;
     }
+
     &__close {
         width: 18px;
         height: 18px;
@@ -220,6 +225,7 @@
         background-color: transparent;
         border: none;
     }
+
     &__form {}
 
     &__wrap {
@@ -398,34 +404,7 @@
     }
 }
 
-.check {
-    position: relative;
-    padding-left: 22px;
-    cursor: pointer;
 
-    &__input {
-        position: absolute;
-        appearance: none;
-        width: 1px;
-        height: 1px;
-
-        &:checked~.check__box {
-            background-color: $red;
-            border: none;
-        }
-    }
-
-    &__box {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 16px;
-        height: 16px;
-        border: 1px solid #999999;
-        border-radius: 3px;
-        background: url(../img/icons/ok.svg) center center no-repeat;
-    }
-}
 
 .noUi-horizontal .noUi-handle {
     width: 23px;
@@ -460,11 +439,10 @@
 }
 
 .pagination {
-    &__list {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 
     &__item {
         &:not(:last-child) {

@@ -16,6 +16,9 @@
         background-color: #999999;
         cursor: auto;
     }
+    &_big {
+        height: 53px;
+    }
 
     &:hover:not(.btn_disabled) {
         background-color: #7FB1ED;
@@ -27,6 +30,44 @@
     line-height: 35px;
     padding-bottom: 8px;
     border-bottom: 1px solid #E5E5E5;
+}
+
+.check {
+    position: relative;
+    padding-left: 22px;
+    cursor: pointer;
+
+    &:hover {
+        .check__box {
+            border-color: $red;
+        }
+    }
+
+    &__input {
+        position: absolute;
+        appearance: none;
+
+        &:checked~.check__box {
+            background-color: $red;
+            border: none;
+        }
+
+        &:focus~.check__box {
+            border-color: $red;
+        }
+    }
+
+    &__box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #999999;
+        border-radius: 3px;
+        background: url(../img/icons/ok.svg) center center no-repeat;
+        transition: border-color .3s;
+    }
 }
 
 .burger {
@@ -47,6 +88,85 @@
     }
 }
 
+.label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    padding: 0 8px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+
+    &_new {
+        background-color: #55BB9F;
+        margin-bottom: 8px;
+    }
+
+    &_gift {
+        background-color: #7FB1ED;
+    }
+
+    &_discount {
+        position: absolute;
+        top: 57%;
+        left: 0;
+        background-color: $red;
+        z-index: 1;
+    }
+}
+
+.feedback {
+    display: inline-flex;
+    align-items: center;
+    &__rating {
+        margin-right: 10px;
+
+        span {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background: url(../img/icons/rating-not-active.svg) center center / cover no-repeat;
+
+            &.active {
+                background-image: url(../img/icons/rating.svg);
+            }
+
+            &:not(:last-child) {
+                margin-right: 3px;
+            }
+        }
+    }
+
+    &__comments {
+        display: inline-flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+        color: #6E6E6E;
+        transition: color .5s;
+
+        svg {
+            width: 21px;
+            height: 16px;
+            fill: #6E6E6E;
+            margin-right: 5px;
+            transition: fill .5s;
+        }
+
+        &:hover {
+            color: $red;
+
+            svg {
+                fill: $red;
+            }
+        }
+    }
+}
+
 .card {
     position: relative;
     display: flex;
@@ -62,38 +182,15 @@
         z-index: 1;
     }
 
-    &__label {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-        padding: 0 8px;
-        border-radius: 5px;
-        font-weight: 600;
-        font-size: 14px;
-        line-height: 18px;
-        color: #FFFFFF;
+    .label {
 
-        &_new {
-            display: none;
-            background-color: #55BB9F;
-            margin-bottom: 8px;
-        }
-
-        &_gift {
-            display: none;
-            background-color: #7FB1ED;
-        }
-
+        &_new,
+        &_gift,
         &_discount {
             display: none;
-            position: absolute;
-            top: 57%;
-            left: 0;
-            background-color: $red;
-            z-index: 1;
         }
     }
+
 
     &__content {
         flex-grow: 1;
@@ -152,55 +249,10 @@
     }
 
     &__feedback {
-        display: inline-flex;
-        align-items: center;
         margin-bottom: 26px;
     }
 
-    &__rating {
-        margin-right: 10px;
-
-        span {
-            display: inline-block;
-            width: 14px;
-            height: 14px;
-            background: url(../img/icons/rating-not-active.svg) center center / cover no-repeat;
-
-            &.active {
-                background-image: url(../img/icons/rating.svg);
-            }
-
-            &:not(:last-child) {
-                margin-right: 3px;
-            }
-        }
-    }
-
-    &__comments {
-        display: inline-flex;
-        align-items: center;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 18px;
-        color: #6E6E6E;
-        transition: color .5s;
-
-        svg {
-            width: 21px;
-            height: 16px;
-            fill: #6E6E6E;
-            margin-right: 5px;
-            transition: fill .5s;
-        }
-
-        &:hover {
-            color: $red;
-
-            svg {
-                fill: $red;
-            }
-        }
-    }
+    
 
     &__btn {
         align-self: flex-start;
@@ -214,19 +266,19 @@
     }
 
     &_new {
-        .card__label_new {
+        .label_new {
             display: inline-flex;
         }
     }
 
     &_gift {
-        .card__label_gift {
+        .label_gift {
             display: inline-flex;
         }
     }
 
     &_discount {
-        .card__label_discount {
+        .label_discount {
             display: inline-flex;
         }
 
@@ -263,12 +315,14 @@
 
         &:hover {
 
-           
+
             .card__title {
                 color: $main-color;
             }
+
             .card__price {
                 color: $main-color;
+
                 &_old {
                     color: #6e6e6e;
                 }
@@ -277,24 +331,25 @@
     }
 
     .card__img {
-        
+
         display: flex;
         width: 185px;
         height: 185px;
         margin-right: 25px;
     }
 
-    .card__title {  
+    .card__title {
         max-width: 500px;
         margin-bottom: 20px;
 
-       a {
-           transition: inherit;
-           &:hover {
-            color: $blue;
+        a {
+            transition: inherit;
+
+            &:hover {
+                color: $blue;
+            }
         }
-       }
-       
+
     }
 
     .card__labels {
@@ -303,11 +358,11 @@
         margin-bottom: 22px;
     }
 
-    .card__label {
+    .label {
         margin-bottom: 0;
     }
 
-    .card__label {
+    .label {
         &:not(:last-child) {
             margin-right: 25px;
         }
@@ -345,6 +400,7 @@
 .card-grid {
     .card__img {
         position: relative;
+
         &::before {
             content: '';
             position: absolute;
@@ -355,32 +411,35 @@
             z-index: 2;
         }
     }
+
     .card__labels {
         position: absolute;
     }
-    .card__label {
+
+    .label {
         margin-bottom: 8px;
     }
-    .card__label_discount {
+
+    .label_discount {
         position: static;
         align-self: flex-start;
     }
 
     .card__content {
         position: static;
-    }
-
-    .card__content {
         display: flex;
         flex-direction: column;
+
         &:hover {
 
-           
+
             .card__title {
                 color: $main-color;
             }
+
             .card__price {
                 color: $main-color;
+
                 &_old {
                     color: #6e6e6e;
                 }
@@ -391,8 +450,10 @@
     .card__title {
         flex-grow: 1;
         margin-bottom: 20px;
+
         a {
             transition: inherit;
+
             &:hover {
                 color: $blue;
             }
