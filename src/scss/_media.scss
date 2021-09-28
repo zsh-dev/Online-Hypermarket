@@ -630,7 +630,6 @@
 
         &__slider-main {
             width: auto;
-            max-width: 100%;
             height: auto;
         }
 
@@ -1130,6 +1129,9 @@
     }
 
     .product {
+        &__code {
+            font-size: 13px;
+        }
         &__box {
             padding-left: 13px;
             padding-right: 13px;
