@@ -1,3 +1,4 @@
+// Слайдеры
 const promoSlider = new Swiper('.promo__slider', {
   loop: true,
   spaceBetween: 30,
@@ -38,7 +39,7 @@ const sliderProductMain = new Swiper(productSliderMain, {
     },
     768: {
       direction: 'vertical',
-     
+
     },
 
   },
@@ -54,6 +55,8 @@ const sliderProductMain = new Swiper(productSliderMain, {
     swiper: sliderProductNav
   }
 })
+
+// ССылка еще
 
 const linkMore = document.querySelector('.header__menu-link_more'),
   listMore = document.querySelector('.header__mobile-list');
@@ -75,11 +78,15 @@ document.addEventListener('click', (event) => {
   }
 })
 
+
+// Кнопки сортировки
 document.querySelectorAll('.catalog__btn-filter').forEach((item) => {
   item.addEventListener('click', () => {
     item.classList.toggle('active')
   })
 });
+
+// Вид каталога товаров
 
 const btnSortList = document.querySelector('.catalog__btn_list'),
   btnSortGrid = document.querySelector('.catalog__btn_grid'),
@@ -116,7 +123,7 @@ if (btnSortGrid) {
 }
 
 
-
+// Аккордеон
 
 function accordeonTrigger(selectors) {
   const items = document.querySelectorAll(selectors);
@@ -147,7 +154,7 @@ if (window.innerWidth < 640) {
 }
 
 
-
+// Работа с ползунком
 
 const rangeSlider = document.querySelector('.filter__range');
 const rangeMinInput = document.getElementById('rangeMin'),
@@ -196,6 +203,8 @@ if (inputs) {
   });
 }
 
+// Открытие и закрытие фильтра
+
 const filterCloseBtn = document.querySelector('.filter__close'),
   filterOpenBtn = document.querySelector('.catalog__btn-open');
 
@@ -215,7 +224,7 @@ if (filterCloseBtn) {
 
 
 
-
+// Работа с бургер меню
 
 const burger = document.querySelector('.burger[data-burger]'),
   burgerClose = document.querySelector('.burger[data-burger-close]'),
@@ -228,7 +237,9 @@ burger.addEventListener('click', () => {
 })
 
 
-menu.addEventListener('click', ({target}) => {
+menu.addEventListener('click', ({
+  target
+}) => {
   if (target == menu || target == burgerClose) {
     menu.classList.remove('active');
     document.body.classList.remove('lock');
@@ -238,7 +249,7 @@ menu.addEventListener('click', ({target}) => {
 
 
 
-
+// Кнопка показать еще
 
 const btnMore = document.querySelector('.text__btn-more'),
   sectionText = document.querySelector('.text');
@@ -247,4 +258,49 @@ if (btnMore) {
   btnMore.addEventListener('click', () => {
     sectionText.classList.add('open')
   })
+}
+
+const specificationsLink =  document.querySelector('.product__link');
+
+specificationsLink.addEventListener('click', function (e) {
+  e.preventDefault()
+  
+  const blockID = specificationsLink.getAttribute('href').substr(1)
+  
+  document.getElementById(blockID).scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  })
+})
+
+const tabBtns = document.querySelectorAll('.specifications__btn'),
+  tabContent = document.querySelectorAll('.specifications__item');
+if (tabBtns) {
+  tabBtns.forEach((btn) => {
+
+    btn.addEventListener('click', () => {
+      let btnId = btn.getAttribute('data-tab'),
+        tab = document.querySelector(btnId);
+
+      if (!btn.classList.contains('active')) {
+        tabBtns.forEach((btn) => {
+          btn.classList.remove('active');
+        })
+        tabContent.forEach((tab) => {
+          tab.classList.remove('active');
+        })
+
+        btn.classList.add('active')
+        tab.classList.add('active')
+      }
+
+
+    })
+  })
+
+
+}
+
+if (window.innerWidth < 768) {
+  accordeonTrigger('.specifications__title');
 }

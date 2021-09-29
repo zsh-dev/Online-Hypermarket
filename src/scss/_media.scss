@@ -338,12 +338,9 @@
     .news {
         padding-bottom: 45px;
 
-        &__inner {
-            overflow-x: scroll;
-        }
-
         &__cards {
             grid-template-columns: repeat(4, 335px);
+            overflow-x: scroll;
         }
     }
 
@@ -387,13 +384,8 @@
             margin-bottom: 0;
         }
 
-        &__btns-wrapper {
-
-            overflow-x: scroll;
-        }
-
         &__btns-filter {
-            min-width: 119%;
+            overflow-x: scroll;
         }
 
         &__quantity {
@@ -450,6 +442,8 @@
     }
 
     .product {
+        padding-bottom: 50px;
+
         &__title {
             flex-basis: 100%;
             border-bottom: 1px solid #E5E5E5;
@@ -513,6 +507,25 @@
             flex-direction: column;
         }
     }
+
+    .products-gift {
+        padding-bottom: 70px;
+
+        &__cards {
+            column-gap: 30px;
+        }
+    }
+
+    .specifications {
+        &__btn:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        &__block:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
 
     .footer {
         &__blocks {
@@ -615,6 +628,8 @@
     }
 
     .product {
+        padding-bottom: 40px;
+
         &__slider {
             width: 100%;
             margin-right: 0;
@@ -634,9 +649,86 @@
         }
 
         &__slider-bullets {
-            display: block;
+            display: flex;
         }
 
+    }
+
+    .products-gift {
+        padding-bottom: 50px;
+
+        &__cards {
+            grid-template-columns: repeat(3, 250px);
+            overflow-x: scroll;
+        }
+    }
+
+    .specifications {
+        &__btns {
+            overflow-x: scroll;
+        }
+
+        &__btn::before {
+            bottom: -7px;
+        }
+
+        &__item {
+            flex-direction: column;
+        }
+
+        &__block {
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+        }
+
+        &__info {
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+
+            &.active {
+                .specifications__descr {
+                    margin-top: 15px;
+                    opacity: 1;
+                }
+
+                .specifications__title::after {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        &__descr {
+
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all .3s ease-out;
+            will-change: max-height;
+
+        }
+
+        &__title {
+            position: relative;
+            transition: .5s;
+            user-select: none;
+            margin-bottom: 0;
+            padding-right: 15px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 10px;
+                right: 0;
+                width: 12px;
+                height: 6px;
+                background-image: url(../img/icons/arrow-down.svg);
+                transition: transform .5s;
+            }
+        }
     }
 
 
@@ -784,11 +876,7 @@
 
         &__cards {
             display: flex;
-            min-width: 170%;
             gap: 0;
-        }
-
-        &__inner {
             overflow-x: scroll;
         }
     }
@@ -901,6 +989,8 @@
     }
 
     .catalog {
+        padding-bottom: 40px;
+
         .form-select {
             width: 60%;
         }
@@ -970,6 +1060,7 @@
         &__link-buy {
             font-size: 15px;
         }
+
         &__info-items {
             &.active {
                 .product__info-wrap {
@@ -1009,6 +1100,12 @@
             opacity: 0;
             transition: all .3s ease-out;
             will-change: max-height;
+        }
+    }
+
+    .specifications {
+        &__title {
+            font-size: 18px;
         }
     }
 
@@ -1085,6 +1182,8 @@
     }
 
     .catalog {
+        padding-bottom: 30px;
+
         &__select {
             font-size: 14px;
             width: 200px;
@@ -1132,6 +1231,7 @@
         &__code {
             font-size: 13px;
         }
+
         &__box {
             padding-left: 13px;
             padding-right: 13px;
@@ -1157,6 +1257,34 @@
         &__btn {
             margin-bottom: 15px;
             width: 100%;
+        }
+    }
+
+    .products-gift {
+        &__cards {
+            grid-template-columns: repeat(3, 220px);
+        }
+    }
+
+    .specifications {
+        &__btn {
+            font-size: 18px;
+
+            &:not(:last-child) {
+                margin-right: 25px;
+            }
+        }
+
+        &__title {
+            font-size: 16px;
+        }
+
+        &__wrap {
+            font-size: 12px;
+        }
+
+        &__name {
+            min-width: 190px;
         }
     }
 

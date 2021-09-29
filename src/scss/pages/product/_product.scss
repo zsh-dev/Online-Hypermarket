@@ -142,7 +142,7 @@
         overflow: hidden;
         width: 300px;
         height: 475px;
-        
+
         .swiper-slide {
             display: flex;
             justify-content: center;
@@ -153,12 +153,14 @@
             }
         }
     }
+
     &__slider-bullets {
         display: none;
+        justify-content: center;
+        align-items: center;
         position: absolute;
-        text-align: center;
         z-index: 1;
-        bottom: 0 !important;
+
         span {
             width: 10px;
             height: 10px;
@@ -166,11 +168,20 @@
             border: 2px solid $red;
             background-color: transparent;
         }
+
         .swiper-pagination-bullet-active {
             background-color: $red;
         }
     }
-    
+
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        top: auto;
+        bottom: 0;
+    }
+
 }
 
 
@@ -330,6 +341,7 @@
         }
     }
 }
+
 .compare-btn {
     display: none;
     position: absolute;

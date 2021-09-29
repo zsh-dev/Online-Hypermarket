@@ -1,0 +1,13 @@
+
+.products-gift {
+        padding-bottom: 90px;
+		&__title {
+            margin-bottom: 30px;
+		}
+
+		&__cards {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(auto, 280px));
+            column-gap: 50px;
+		}
+}
