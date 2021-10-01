@@ -247,6 +247,23 @@ menu.addEventListener('click', ({
 })
 
 
+const btnFormOpen = document.querySelector('.header__btn-search_open'),
+      btnFormClose = document.querySelector('.header__form-close'),
+      headerForm = document.querySelector('.header__form');
+
+btnFormOpen.addEventListener('click', () => {
+  headerForm.classList.add('active')
+  document.body.classList.add('lock')
+})
+
+headerForm.addEventListener('click', ({target}) => {
+  if (target == headerForm || target == btnFormClose) {
+    headerForm.classList.remove('active')
+    document.body.classList.remove('lock')
+  }
+ 
+})
+
 
 
 // Кнопка показать еще
@@ -262,7 +279,8 @@ if (btnMore) {
 
 const specificationsLink =  document.querySelector('.product__link');
 
-specificationsLink.addEventListener('click', function (e) {
+if (specificationsLink) {
+  specificationsLink.addEventListener('click', function (e) {
   e.preventDefault()
   
   const blockID = specificationsLink.getAttribute('href').substr(1)
@@ -272,6 +290,9 @@ specificationsLink.addEventListener('click', function (e) {
     block: 'start'
   })
 })
+}
+
+
 
 const tabBtns = document.querySelectorAll('.specifications__btn'),
   tabContent = document.querySelectorAll('.specifications__item');

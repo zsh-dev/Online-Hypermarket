@@ -146,10 +146,12 @@
 
 
     &__form {
-        position: relative;
         max-width: 26%;
-        height: 42px;
         flex-grow: 1;
+    }
+    &__form-wrap {
+        position: relative;
+        height: 42px;
     }
 
     &__input {
@@ -182,11 +184,22 @@
         background-color: transparent;
         border: none;
 
-        &_link {
+        &_open {
             position: static;
             height: 42px;
             display: none;
         }
+    }
+    &__form-close {
+        display: none;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: transparent;
+        border: none;
+        width: 27px;
+        height: 27px;
+        background: url(../img/icons/close-white.svg) center center / cover no-repeat;
     }
 
     &__contacts {
