@@ -16,11 +16,21 @@
         background-color: #999999;
         cursor: auto;
     }
+
     &_big {
         height: 53px;
     }
 
-    &:hover:not(.btn_disabled) {
+    &_wide {
+        height: 51px;
+        min-width: 281px;
+        background-color: #FD433C;
+        &:hover {
+            background-color: rgba(253, 67, 60, .8);
+        }
+    }
+
+    &:hover:not(.btn_disabled, .btn_wide) {
         background-color: #7FB1ED;
     }
 }
@@ -121,24 +131,7 @@
 .feedback {
     display: inline-flex;
     align-items: center;
-    &__rating {
-        margin-right: 10px;
 
-        span {
-            display: inline-block;
-            width: 14px;
-            height: 14px;
-            background: url(../img/icons/rating-not-active.svg) center center / cover no-repeat;
-
-            &.active {
-                background-image: url(../img/icons/rating.svg);
-            }
-
-            &:not(:last-child) {
-                margin-right: 3px;
-            }
-        }
-    }
 
     &__comments {
         display: inline-flex;
@@ -148,6 +141,7 @@
         line-height: 18px;
         color: #6E6E6E;
         transition: color .5s;
+        margin-left: 10px;
 
         svg {
             width: 21px;
@@ -163,6 +157,23 @@
             svg {
                 fill: $red;
             }
+        }
+    }
+}
+
+.rating {
+    span {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background: url(../img/icons/rating-not-active.svg) center center / cover no-repeat;
+
+        &.active {
+            background-image: url(../img/icons/rating.svg);
+        }
+
+        &:not(:last-child) {
+            margin-right: 3px;
         }
     }
 }
@@ -252,7 +263,7 @@
         margin-bottom: 26px;
     }
 
-    
+
 
     &__btn {
         align-self: flex-start;
