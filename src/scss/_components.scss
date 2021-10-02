@@ -79,6 +79,13 @@
         transition: border-color .3s;
     }
 }
+.btn-close {
+    width: 18px;
+    height: 18px;
+    background: url(../img/icons/close-gray.svg) center center / cover no-repeat;
+    border: none;
+    cursor: pointer;
+}
 
 .burger {
     display: none;

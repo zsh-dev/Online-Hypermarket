@@ -18,11 +18,14 @@
     &__city {
         position: relative;
         padding-left: 19px;
-
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
         &::before {
             content: '';
             position: absolute;
-            top: 0;
+            top: 2px;
             left: 0;
             background-image: url(../img/icons/address.svg);
             width: 14px;

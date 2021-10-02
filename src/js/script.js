@@ -56,6 +56,29 @@ const sliderProductMain = new Swiper(productSliderMain, {
   }
 })
 
+// Кнопка для выбора города
+
+const btnCity = document.querySelector('.header__city'),
+modal = document.querySelector('.modal'),
+  modalCity = document.querySelector('.modal-city');
+
+btnCity.addEventListener('click', () => {
+  modal.classList.add('active');
+  modalCity.classList.add('active');
+  document.body.classList.add('lock');
+})
+modal.addEventListener('click', ({
+  target
+}) => {
+  if (target == modal || target.classList.contains('btn-close') || target.classList.contains('modal-city__link')) {
+    modal.classList.remove('active');
+    document.body.classList.remove('lock');
+  }
+  if (target.classList.contains('modal-city__link')) {
+    btnCity.textContent = target.textContent;
+  }
+})
+
 // ССылка еще
 
 const linkMore = document.querySelector('.header__menu-link_more'),
@@ -248,20 +271,22 @@ menu.addEventListener('click', ({
 
 
 const btnFormOpen = document.querySelector('.header__btn-search_open'),
-      btnFormClose = document.querySelector('.header__form-close'),
-      headerForm = document.querySelector('.header__form');
+  btnFormClose = document.querySelector('.header__form-close'),
+  headerForm = document.querySelector('.header__form');
 
 btnFormOpen.addEventListener('click', () => {
   headerForm.classList.add('active')
   document.body.classList.add('lock')
 })
 
-headerForm.addEventListener('click', ({target}) => {
+headerForm.addEventListener('click', ({
+  target
+}) => {
   if (target == headerForm || target == btnFormClose) {
     headerForm.classList.remove('active')
     document.body.classList.remove('lock')
   }
- 
+
 })
 
 
@@ -277,19 +302,19 @@ if (btnMore) {
   })
 }
 
-const specificationsLink =  document.querySelector('.product__link');
+const specificationsLink = document.querySelector('.product__link');
 
 if (specificationsLink) {
   specificationsLink.addEventListener('click', function (e) {
-  e.preventDefault()
-  
-  const blockID = specificationsLink.getAttribute('href').substr(1)
-  
-  document.getElementById(blockID).scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
+    e.preventDefault()
+
+    const blockID = specificationsLink.getAttribute('href').substr(1)
+
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
   })
-})
 }
 
 
