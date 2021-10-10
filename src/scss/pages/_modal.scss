@@ -1,5 +1,5 @@
 .modal {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -12,7 +12,7 @@
     visibility: hidden;
     transition: opacity .5s, visibility .5s;
     z-index: 12;
-
+    overflow-y: auto;
     &.active {
         opacity: 1;
         visibility: visible;
@@ -23,14 +23,70 @@
         top: 15px;
         right: 15px;
     }
+
+    
+}
+
+.modal-order {
+    display: none;
+    &.active{
+        display: block;
+    }
+    .product {
+        position: relative;
+        width: 750px;
+        padding: 40px 25px 40px 40px;
+        background-color: #FFFFFF;
+        border-radius: 5px;
+        overflow-y: auto;
+    }
+    .product__img {
+        max-width: 300px;
+        max-height: 470px;
+        margin-right: 30px;
+        img {
+            max-height: 100%;
+        }
+    }
+    .label {
+        margin-bottom: 0;
+    }
+    .product__title {
+        margin-top: 23px;
+    }
+    .product__box {
+        padding: 0;
+        box-shadow: none;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .product__link-buy {
+        flex-shrink: 0;
+        margin-bottom: 0;
+    }
+    .product__btn-wrap {
+        text-align: center;
+        margin-top: 30px;
+        a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 }
 
 .modal-city {
+    display: none;
     position: relative;
     width: 494px;
     background-color: #FFFFFF;
     border-radius: 5px;
     padding: 35px 20px 40px 30px;
+    overflow-y: auto;
+
+    &.active {
+        display: block;
+    }
 
     &__title {
         font-weight: 500;
@@ -65,6 +121,7 @@
         line-height: 25px;
         transition: padding-left .25s, color .5s;
         border-bottom: 1px solid #e8e8e8;
+
         &:hover {
             padding-left: 11px;
             color: $blue;

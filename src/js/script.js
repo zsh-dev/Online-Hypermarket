@@ -58,21 +58,30 @@ const sliderProductMain = new Swiper(productSliderMain, {
 
 // Кнопка для выбора города
 
+function modalOpen(someModal) {
+  modal.classList.add('active');
+  someModal.classList.add('active');
+  document.body.classList.add('lock');
+}
+
+function modalClose(someModal) {
+  modal.classList.remove('active');
+  someModal.classList.remove('active');
+  document.body.classList.remove('lock');
+}
+
 const btnCity = document.querySelector('.header__city'),
 modal = document.querySelector('.modal'),
   modalCity = document.querySelector('.modal-city');
 
 btnCity.addEventListener('click', () => {
-  modal.classList.add('active');
-  modalCity.classList.add('active');
-  document.body.classList.add('lock');
+  modalOpen(modalCity)
 })
-modal.addEventListener('click', ({
-  target
-}) => {
+
+
+modal.addEventListener('click', ({target}) => {
   if (target == modal || target.classList.contains('btn-close') || target.classList.contains('modal-city__link')) {
-    modal.classList.remove('active');
-    document.body.classList.remove('lock');
+    modalClose(modalCity);
   }
   if (target.classList.contains('modal-city__link')) {
     btnCity.textContent = target.textContent;
@@ -82,7 +91,7 @@ modal.addEventListener('click', ({
 // ССылка еще
 
 const linkMore = document.querySelector('.header__menu-link_more'),
-  listMore = document.querySelector('.header__mobile-list');
+      listMore = document.querySelector('.header__mobile-list');
 
 document.addEventListener('click', (event) => {
   const target = event.target;
@@ -98,6 +107,48 @@ document.addEventListener('click', (event) => {
     } else {
       listMore.classList.remove('active');
     }
+  }
+})
+
+// Модадльное окно заказа
+
+const products = document.querySelector('.products'),
+      modalOrder = document.querySelector('.modal-order'),
+      btnModalClose = document.querySelector('.modal-order .btn-close');
+
+products.addEventListener('click', ({target}) => {
+  if (target.classList.contains('card__btn')) {
+    let product = target.parentNode;
+
+
+    let productTitle = product.querySelector('.card__title').textContent,
+     productImg = product.querySelector('.card__img img').getAttribute('src'),
+     productPrice = product.querySelector('.card__price').textContent,
+     productPriceOld = product.querySelector('.card__price_old').textContent,
+     productRating = product.querySelector('.rating').outerHTML,
+     productComment = product.querySelector('.feedback__comments').textContent,
+     productCommentLink = product.querySelector('.feedback__comments').getAttribute('href');
+
+
+
+
+
+    
+    modalOrder.querySelector('.product__title').textContent = productTitle;
+    modalOrder.querySelector('.product__img img').setAttribute('src', productImg);
+    modalOrder.querySelector('.product__price').textContent = productPrice;
+    modalOrder.querySelector('.product__price_old').textContent = productPriceOld;
+    modalOrder.querySelector('.feedback__comments span').textContent = productComment;
+    modalOrder.querySelector('.feedback__comments span').setAttribute('src', productCommentLink);
+    modalOrder.querySelector('.rating').innerHTML = productRating;
+
+    modalOpen(modalOrder);
+  }
+})
+
+modal.addEventListener('click', ({target}) => {
+  if (target == modal || target.classList.contains('btn-close')) {
+    modalClose(modalOrder);
   }
 })
 
