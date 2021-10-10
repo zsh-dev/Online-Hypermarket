@@ -112,45 +112,46 @@ document.addEventListener('click', (event) => {
 
 // Модадльное окно заказа
 
-const products = document.querySelector('.products'),
+const products = document.querySelector('[data-products]'),
       modalOrder = document.querySelector('.modal-order'),
       btnModalClose = document.querySelector('.modal-order .btn-close');
+      if (products) {
+        products.addEventListener('click', ({target}) => {
+          if (target.classList.contains('card__btn')) {
+            let product = target.closest('.card');
+        
+            console.log(product);
+            let productTitle = product.querySelector('.card__title').textContent,
+             productImg = product.querySelector('.card__img img').getAttribute('src'),
+             productPrice = product.querySelector('.card__price').textContent,
+             productPriceOld = product.querySelector('.card__price_old').textContent,
+             productRating = product.querySelector('.rating').outerHTML,
+             productComment = product.querySelector('.feedback__comments').textContent,
+             productCommentLink = product.querySelector('.feedback__comments').getAttribute('href');
+                
+            
+            modalOrder.querySelector('.product__title').textContent = productTitle;
+            modalOrder.querySelector('.product__img img').setAttribute('src', productImg);
+            modalOrder.querySelector('.product__price').textContent = productPrice;
+            modalOrder.querySelector('.product__price_old').textContent = productPriceOld;
+            modalOrder.querySelector('.feedback__comments span').textContent = productComment;
+            modalOrder.querySelector('.feedback__comments span').setAttribute('src', productCommentLink);
+            modalOrder.querySelector('.rating').innerHTML = productRating;
+        
+            modalOpen(modalOrder);
+          }
+        })
+      }
 
-products.addEventListener('click', ({target}) => {
-  if (target.classList.contains('card__btn')) {
-    let product = target.parentNode;
-
-
-    let productTitle = product.querySelector('.card__title').textContent,
-     productImg = product.querySelector('.card__img img').getAttribute('src'),
-     productPrice = product.querySelector('.card__price').textContent,
-     productPriceOld = product.querySelector('.card__price_old').textContent,
-     productRating = product.querySelector('.rating').outerHTML,
-     productComment = product.querySelector('.feedback__comments').textContent,
-     productCommentLink = product.querySelector('.feedback__comments').getAttribute('href');
 
 
 
-
-
-    
-    modalOrder.querySelector('.product__title').textContent = productTitle;
-    modalOrder.querySelector('.product__img img').setAttribute('src', productImg);
-    modalOrder.querySelector('.product__price').textContent = productPrice;
-    modalOrder.querySelector('.product__price_old').textContent = productPriceOld;
-    modalOrder.querySelector('.feedback__comments span').textContent = productComment;
-    modalOrder.querySelector('.feedback__comments span').setAttribute('src', productCommentLink);
-    modalOrder.querySelector('.rating').innerHTML = productRating;
-
-    modalOpen(modalOrder);
-  }
-})
-
-modal.addEventListener('click', ({target}) => {
-  if (target == modal || target.classList.contains('btn-close')) {
-    modalClose(modalOrder);
-  }
-})
+      modal.addEventListener('click', ({target}) => {
+        if (target == modal || target.classList.contains('btn-close')) {
+          modalClose(modalOrder);
+        }
+      })
+ 
 
 
 // Кнопки сортировки
@@ -321,8 +322,8 @@ menu.addEventListener('click', ({
 })
 
 
-const btnFormOpen = document.querySelector('.header__btn-search_open'),
-  btnFormClose = document.querySelector('.header__form-close'),
+const btnFormOpen = document.querySelector('.btn-search_open'),
+  btnFormClose = document.querySelector('.search-form__form-close'),
   headerForm = document.querySelector('.header__form');
 
 btnFormOpen.addEventListener('click', () => {
