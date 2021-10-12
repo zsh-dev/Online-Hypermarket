@@ -448,6 +448,10 @@
         align-self: flex-start;
     }
 
+    .card__img:hover ~ .card__content .card__title{
+        color: $blue;
+    }
+
     .card__content {
         position: static;
         display: flex;
